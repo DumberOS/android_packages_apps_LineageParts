@@ -577,9 +577,9 @@
     <string name="display_rotation_270_title">270 degrees</string>
 
     <!-- Applications: Long screen -->
-    <string name="long_screen_settings_title">Full screen apps</string>
-    <string name="long_screen_settings_summary">Force legacy apps to use full screen aspect ratio</string>
-    <string name="long_screen_settings_no_apps">No apps</string>
+    <string name="inverse_long_screen_settings_title">Disable stretch-to-fullscreen</string>
+    <string name="inverse_long_screen_settings_summary">Prevent selected apps from utilizing stretch-to-fullscreen</string>
+    <string name="inverse_long_screen_settings_no_apps">No apps</string>
 
     <!-- Sounds: Charging sounds -->
     <string name="charging_sounds_settings_title">Charging sounds</string>
