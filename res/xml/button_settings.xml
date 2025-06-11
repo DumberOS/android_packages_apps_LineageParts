@@ -157,6 +157,34 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="dpad_key"
+        android:title="@string/hardware_keys_dpad_key_title" >
+
+        <ListPreference
+            android:key="hardware_keys_dpad_screen_off"
+            android:dialogTitle="@string/dpad_screen_off_action_title"
+            android:title="@string/dpad_screen_off_action_title"
+            android:entries="@array/dpad_action_entries"
+            android:entryValues="@array/dpad_action_values"
+            android:persistent="false" />
+        <ListPreference
+            android:key="hardware_keys_dpad_music_playing"
+            android:dialogTitle="@string/dpad_music_playing_action_title"
+            android:title="@string/dpad_music_playing_action_title"
+            android:entries="@array/dpad_action_entries"
+            android:entryValues="@array/dpad_action_values"
+            android:persistent="false" />
+        <ListPreference
+            android:key="hardware_keys_dpad_call_active"
+            android:dialogTitle="@string/dpad_call_active_action_title"
+            android:title="@string/dpad_call_active_action_title"
+            android:entries="@array/dpad_action_entries"
+            android:entryValues="@array/dpad_action_values"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="back_key"
         android:title="@string/hardware_keys_back_key_title" >
 
