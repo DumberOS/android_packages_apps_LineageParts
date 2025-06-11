@@ -178,6 +178,10 @@
     <string name="button_pref_title">Buttons</string>
     <string name="hardware_keys_power_key_title">Power button</string>
     <string name="hardware_keys_home_key_title">Home button</string>
+    <string name="hardware_keys_dpad_key_title">Dpad up/down buttons</string>
+    <string name="dpad_screen_off_action_title">While the screen is off</string>
+    <string name="dpad_music_playing_action_title">While media is playing</string>
+    <string name="dpad_call_active_action_title">While a call is active</string>
     <string name="hardware_keys_back_key_title">Back button</string>
     <string name="hardware_keys_menu_key_title">Menu button</string>
     <string name="hardware_keys_assist_key_title">Search button</string>
@@ -198,6 +202,7 @@
     <string name="hardware_keys_action_last_app">Last app</string>
     <string name="hardware_keys_action_split_screen">Split screen</string>
     <string name="hardware_keys_action_kill_app">Kill foreground app</string>
+    <string name="dpad_action_volume">Change volume</string>
     <string name="camera_sleep_on_release_title">Screen peek</string>
     <string name="camera_sleep_on_release_summary">A half press will keep the screen on only while the button is held down</string>
     <string name="camera_launch_title">Launch camera</string>
@@ -256,6 +261,7 @@
     <string name="navigation_bar_back_long_press_title">Back long press action</string>
     <string name="navigation_bar_home_long_press_title">Home long press action</string>
     <string name="navigation_bar_home_double_tap_title">Home double tap action</string>
+    <!--<string name="navigation_bar_dpad_long_press_title">Dpad up/down long press action</string>-->
     <string name="navigation_bar_app_switch_long_press_title">Recents long press action</string>
     <string name="navigation_bar_edge_long_swipe_title">Edge long swipe action</string>
 
