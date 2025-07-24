@@ -121,6 +121,14 @@
             android:dependency="torch_long_press_power_gesture"
             android:persistent="false" />
 
+        <ListPreference
+            android:key="power_button_action"
+            android:dialogTitle="@string/power_button_action_title"
+            android:title="@string/power_button_action_title"
+            android:entries="@array/power_button_action_entries"
+            android:entryValues="@array/power_button_action_values"
+            android:persistent="false" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
