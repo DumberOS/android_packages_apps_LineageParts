@@ -177,6 +177,9 @@
     <!-- Button settings -->
     <string name="button_pref_title">Buttons</string>
     <string name="hardware_keys_power_key_title">Power button</string>
+    <string name="power_button_action_title">Power button action</string>
+    <string name="power_button_action_screen_off">Always turn off the screen</string>
+    <string name="power_button_action_go_home">Go home first or turn off the screen</string>
     <string name="hardware_keys_home_key_title">Home button</string>
     <string name="hardware_keys_dpad_key_title">Dpad up/down buttons</string>
     <string name="dpad_screen_off_action_title">While the screen is off</string>

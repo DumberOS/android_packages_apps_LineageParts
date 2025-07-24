@@ -67,6 +67,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private static final String KEY_HOME_LONG_PRESS = "hardware_keys_home_long_press";
     private static final String KEY_HOME_DOUBLE_TAP = "hardware_keys_home_double_tap";
     private static final String KEY_HOME_WAKE_SCREEN = "home_wake_screen";
+    private static final String KEY_POWER_BUTTON_ACTION = "power_button_action";
     private static final String KEY_DPAD_SCREEN_OFF = "hardware_keys_dpad_screen_off";
     private static final String KEY_DPAD_MUSIC_PLAYING = "hardware_keys_dpad_music_playing";
     private static final String KEY_DPAD_CALL_ACTIVE = "hardware_keys_dpad_call_active";
@@ -119,6 +120,7 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private ListPreference mBackLongPressAction;
     private ListPreference mHomeLongPressAction;
     private ListPreference mHomeDoubleTapAction;
+    private ListPreference mPowerButtonAction;
     private ListPreference mDpadScreenOffAction;
     private ListPreference mDpadMusicPlayingAction;
     private ListPreference mDpadCallActiveAction;
@@ -166,9 +168,9 @@ public class ButtonSettings extends SettingsPreferenceFragment
         final PreferenceScreen prefScreen = getPreferenceScreen();
 
         final boolean hasPowerKey = DeviceUtils.hasPowerKey();
-        final boolean hasHomeKey = DeviceUtils.hasHomeKey(getActivity());
+        final boolean hasHomeKey = false;//DeviceUtils.hasHomeKey(getActivity());
         final boolean hasBackKey = DeviceUtils.hasBackKey(getActivity());
-        final boolean hasMenuKey = false;
+        final boolean hasMenuKey = true;
         final boolean hasAssistKey = false;
         final boolean hasAppSwitchKey = false;
         final boolean hasCameraKey = false;
@@ -219,6 +221,8 @@ public class ButtonSettings extends SettingsPreferenceFragment
                 org.lineageos.platform.internal.R.integer.config_longPressOnHomeBehavior));
         Action defaultHomeDoubleTapAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_doubleTapOnHomeBehavior));
+        Action defaultPowerButtonAction = Action.fromIntSafe(res.getInteger(
+                org.lineageos.platform.internal.R.integer.config_powerButtonBehavior));
         Action defaultDpadScreenOffAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_screenOffDpadBehavior));
         Action defaultDpadMusicPlayingAction = Action.fromIntSafe(res.getInteger(
@@ -236,6 +240,9 @@ public class ButtonSettings extends SettingsPreferenceFragment
         Action homeDoubleTapAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_HOME_DOUBLE_TAP_ACTION,
                 defaultHomeDoubleTapAction);
+        Action powerButtonAction = Action.fromSettings(resolver,
+                LineageSettings.System.KEY_POWER_BUTTON_ACTION,
+                defaultPowerButtonAction);
         Action dpadScreenOffAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_DPAD_SCREEN_OFF_ACTION,
                 defaultDpadScreenOffAction);
@@ -564,6 +571,14 @@ public class ButtonSettings extends SettingsPreferenceFragment
         mEdgeLongSwipeAction.setEntries(actionEntries);
         mEdgeLongSwipeAction.setEntryValues(actionValues);
 
+	mPowerButtonAction = initList(KEY_POWER_BUTTON_ACTION, powerButtonAction);
+        List<String> powerButtonEntries = new ArrayList<>(
+                Arrays.asList(res.getStringArray(R.array.power_button_action_entries)));
+        List<String> powerButtonValues = new ArrayList<>(
+                Arrays.asList(res.getStringArray(R.array.power_button_action_values)));
+        mPowerButtonAction.setEntries(powerButtonEntries.toArray(new String[0]));
+        mPowerButtonAction.setEntryValues(powerButtonValues.toArray(new String[0]));
+
 	mDpadScreenOffAction = initList(KEY_DPAD_SCREEN_OFF, dpadScreenOffAction);
 	mDpadMusicPlayingAction = initList(KEY_DPAD_MUSIC_PLAYING, dpadMusicPlayingAction);
 	mDpadCallActiveAction = initList(KEY_DPAD_CALL_ACTIVE, dpadCallActiveAction);
@@ -642,6 +657,10 @@ public class ButtonSettings extends SettingsPreferenceFragment
                 preference == mNavigationHomeLongPressAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_HOME_LONG_PRESS_ACTION);
+            return true;
+        } else if (preference == mPowerButtonAction) {
+            handleListChange((ListPreference) preference, newValue,
+                    LineageSettings.System.KEY_POWER_BUTTON_ACTION);
             return true;
         } else if (preference == mDpadScreenOffAction) {
             handleListChange((ListPreference) preference, newValue,
