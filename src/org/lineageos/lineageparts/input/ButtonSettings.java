@@ -196,6 +196,8 @@ public class ButtonSettings extends SettingsPreferenceFragment
 
         // Power button ends calls.
         mPowerEndCall = findPreference(KEY_POWER_END_CALL);
+        prefScreen.removePreference(mPowerEndCall);
+        powerCategory.removePreference(mPowerEndCall);
 
         // Long press power while display is off to activate torchlight
         SwitchPreferenceCompat torchLongPressPowerGesture =
