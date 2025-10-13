@@ -176,13 +176,6 @@
             android:entryValues="@array/dpad_action_values"
             android:persistent="false" />
         <ListPreference
-            android:key="hardware_keys_dpad_music_playing"
-            android:dialogTitle="@string/dpad_music_playing_action_title"
-            android:title="@string/dpad_music_playing_action_title"
-            android:entries="@array/dpad_action_entries"
-            android:entryValues="@array/dpad_action_values"
-            android:persistent="false" />
-        <ListPreference
             android:key="hardware_keys_dpad_call_active"
             android:dialogTitle="@string/dpad_call_active_action_title"
             android:title="@string/dpad_call_active_action_title"

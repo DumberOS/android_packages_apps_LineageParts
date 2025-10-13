@@ -69,7 +69,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private static final String KEY_HOME_WAKE_SCREEN = "home_wake_screen";
     private static final String KEY_POWER_BUTTON_ACTION = "power_button_action";
     private static final String KEY_DPAD_SCREEN_OFF = "hardware_keys_dpad_screen_off";
-    private static final String KEY_DPAD_MUSIC_PLAYING = "hardware_keys_dpad_music_playing";
     private static final String KEY_DPAD_CALL_ACTIVE = "hardware_keys_dpad_call_active";
     private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
     private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
@@ -122,7 +121,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
     private ListPreference mHomeDoubleTapAction;
     private ListPreference mPowerButtonAction;
     private ListPreference mDpadScreenOffAction;
-    private ListPreference mDpadMusicPlayingAction;
     private ListPreference mDpadCallActiveAction;
     private ListPreference mMenuPressAction;
     private ListPreference mMenuLongPressAction;
@@ -227,8 +225,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
                 org.lineageos.platform.internal.R.integer.config_powerButtonBehavior));
         Action defaultDpadScreenOffAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_screenOffDpadBehavior));
-        Action defaultDpadMusicPlayingAction = Action.fromIntSafe(res.getInteger(
-                org.lineageos.platform.internal.R.integer.config_musicPlayingDpadBehavior));
         Action defaultDpadCallActiveAction = Action.fromIntSafe(res.getInteger(
                 org.lineageos.platform.internal.R.integer.config_callActiveDpadBehavior));
         Action defaultAppSwitchLongPressAction = Action.fromIntSafe(res.getInteger(
@@ -248,9 +244,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
         Action dpadScreenOffAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_DPAD_SCREEN_OFF_ACTION,
                 defaultDpadScreenOffAction);
-        Action dpadMusicPlayingAction = Action.fromSettings(resolver,
-                LineageSettings.System.KEY_DPAD_MUSIC_PLAYING_ACTION,
-                defaultDpadMusicPlayingAction);
         Action dpadCallActiveAction = Action.fromSettings(resolver,
                 LineageSettings.System.KEY_DPAD_CALL_ACTIVE_ACTION,
                 defaultDpadCallActiveAction);
@@ -582,7 +575,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
         mPowerButtonAction.setEntryValues(powerButtonValues.toArray(new String[0]));
 
 	mDpadScreenOffAction = initList(KEY_DPAD_SCREEN_OFF, dpadScreenOffAction);
-	mDpadMusicPlayingAction = initList(KEY_DPAD_MUSIC_PLAYING, dpadMusicPlayingAction);
 	mDpadCallActiveAction = initList(KEY_DPAD_CALL_ACTIVE, dpadCallActiveAction);
         List<String> dpadEntries = new ArrayList<>(
                 Arrays.asList(res.getStringArray(R.array.dpad_action_entries)));
@@ -590,8 +582,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
                 Arrays.asList(res.getStringArray(R.array.dpad_action_values)));
         mDpadScreenOffAction.setEntries(dpadEntries.toArray(new String[0]));
         mDpadScreenOffAction.setEntryValues(dpadValues.toArray(new String[0]));
-        mDpadMusicPlayingAction.setEntries(dpadEntries.toArray(new String[0]));
-        mDpadMusicPlayingAction.setEntryValues(dpadValues.toArray(new String[0]));
         mDpadCallActiveAction.setEntries(dpadEntries.toArray(new String[0]));
         mDpadCallActiveAction.setEntryValues(dpadValues.toArray(new String[0]));
     }
@@ -667,10 +657,6 @@ public class ButtonSettings extends SettingsPreferenceFragment
         } else if (preference == mDpadScreenOffAction) {
             handleListChange((ListPreference) preference, newValue,
                     LineageSettings.System.KEY_DPAD_SCREEN_OFF_ACTION);
-            return true;
-        } else if (preference == mDpadMusicPlayingAction) {
-            handleListChange((ListPreference) preference, newValue,
-                    LineageSettings.System.KEY_DPAD_MUSIC_PLAYING_ACTION);
             return true;
         } else if (preference == mDpadCallActiveAction) {
             handleListChange((ListPreference) preference, newValue,
