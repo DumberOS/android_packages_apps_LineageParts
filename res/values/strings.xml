@@ -183,7 +183,6 @@
     <string name="hardware_keys_home_key_title">Home button</string>
     <string name="hardware_keys_dpad_key_title">Dpad up/down buttons</string>
     <string name="dpad_screen_off_action_title">While the screen is off</string>
-    <string name="dpad_music_playing_action_title">While media is playing</string>
     <string name="dpad_call_active_action_title">While a call is active</string>
     <string name="hardware_keys_back_key_title">Back button</string>
     <string name="hardware_keys_menu_key_title">Menu button</string>
