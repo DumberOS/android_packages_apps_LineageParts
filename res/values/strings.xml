@@ -117,7 +117,8 @@
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">Light settings</string>
     <string name="led_notification_text">LED light enabled by settings</string>
-    <string name="notification_light_add_apps_empty_summary">To add per app control, activate \'%1$s\' and press \'Add\'</string>
+    <string name="notification_light_add_apps_empty_summary">To add per app control, press "%1$s"</string>
+    <string name="notification_light_remove_app">Remove</string>
 
     <!-- LiveDisplay -->
     <string name="live_display_summary">Optimize your screen based on time of day and ambient conditions to improve readability and reduce eyestrain</string>

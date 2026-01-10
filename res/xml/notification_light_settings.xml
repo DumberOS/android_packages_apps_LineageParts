@@ -57,35 +57,30 @@
             android:title="@string/notification_light_screen_on"
             android:dependency="notification_light_pulse" />
 
-        <lineageos.preference.LineageSystemSettingSwitchPreference
-            android:key="notification_light_pulse_custom_enable"
-            android:title="@string/notification_light_use_custom"
-            android:dependency="notification_light_pulse" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="phone_list"
         android:title="@string/notification_light_phonelist_title" >
 
-        <org.lineageos.lineageparts.notificationlight.ApplicationLightPreference
-            android:key="missed_call"
+        <lineageos.preference.LineageSystemSettingSwitchPreference
+            android:key="notification_light_pulse_call_enable"
             android:title="@string/notification_light_missed_call_title"
-            android:persistent="false"
-            android:dependency="notification_light_pulse_custom_enable" />
+            android:defaultValue="true"
+            android:dependency="notification_light_pulse" />
 
-        <org.lineageos.lineageparts.notificationlight.ApplicationLightPreference
-            android:key="voicemail"
+        <lineageos.preference.LineageSystemSettingSwitchPreference
+            android:key="notification_light_pulse_vmail_enable"
             android:title="@string/notification_light_voicemail_title"
-            android:persistent="false"
-            android:dependency="notification_light_pulse_custom_enable" />
+            android:defaultValue="true"
+            android:dependency="notification_light_pulse" />
 
     </PreferenceCategory>
 
     <PreferenceCategory
         android:key="applications_list"
         android:title="@string/notification_light_applist_title"
-        android:dependency="notification_light_pulse_custom_enable" >
+        android:dependency="notification_light_pulse" >
 
         <Preference
             android:key="custom_apps_add"
