@@ -44,5 +44,5 @@ prebuilt_etc {
     system_ext_specific: true,
     sub_dir: "permissions",
     src: "privapp_whitelist_org.lineageos.lineageparts.xml",
-    filename_from_src: true,
+    filename: "privapp_whitelist_org.dumberos.lineageparts.xml",
 }
